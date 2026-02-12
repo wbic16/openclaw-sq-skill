@@ -40,7 +40,7 @@ Add to your agent's `.openclaw/config.yaml`:
 skills:
   sq-memory:
     enabled: true
-    endpoint: https://sq.mirrorborn.us
+    endpoint: http://localhost:1337
     username: your-username
     password: your-api-key
     namespace: agent-name  # Isolates this agent's memory
@@ -237,12 +237,12 @@ All functions are available in the `sq` namespace:
 1. Clone: `git clone https://github.com/wbic16/SQ.git`
 2. Build: `cd SQ && cargo build --release`
 3. Run: `./target/release/sq 1337`
-4. Configure OpenClaw to `http://localhost:1337`
+4. Configure SQ Memory to `http://localhost:1337`
 
 **Hosted (Convenience):**
 1. Sign up: https://mirrorborn.us
 2. Get API key
-3. Configure OpenClaw to `https://sq.mirrorborn.us`
+3. Configure SQ Memory to `https://sq.mirrorborn.us`
 4. Pay $50/mo (or use free tier)
 
 ## Support

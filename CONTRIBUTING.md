@@ -199,7 +199,7 @@ node test.js http://localhost:1337
 npm test
 
 # Specific endpoint
-SQ_ENDPOINT=https://sq.mirrorborn.us SQ_API_KEY=your-key npm test
+SQ_ENDPOINT=http://localhost:1337 SQ_API_KEY=your-key npm test
 
 # Or pass directly
 node test.js http://your-endpoint:1337

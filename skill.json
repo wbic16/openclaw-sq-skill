@@ -60,8 +60,8 @@
   "config": {
     "endpoint": {
       "type": "string",
-      "description": "SQ endpoint URL (mirrorborn.us or self-hosted)",
-      "default": "https://sq.mirrorborn.us",
+      "description": "SQ endpoint URL",
+      "default": "http://localhost:1337",
       "required": true
     },
     "api_key": {

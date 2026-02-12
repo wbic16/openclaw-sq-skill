@@ -70,7 +70,7 @@ skills:
 skills:
   sq-memory:
     enabled: true
-    endpoint: https://sq.mirrorborn.us
+    endpoint: http://localhost:1337
     api_key: sk_your_api_key_here
     namespace: my-assistant
 ```
