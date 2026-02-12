@@ -109,6 +109,17 @@ Agent: "Your favorite color is blue!"
 - Store research findings
 - Accumulate domain knowledge over time
 
+## No Vendor Lock-In
+
+**Your data, your way:**
+- Run SQ yourself = full control
+- Switch between self-hosted and hosted anytime
+- Export your data = plain `.phext` text files
+- Modify SQ source code to fit your needs
+- No proprietary formats, no API limits (self-hosted)
+
+**This is what open source means:** You're never trapped.
+
 ## How It Works
 
 **Under the hood:**
