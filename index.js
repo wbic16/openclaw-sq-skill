@@ -11,6 +11,7 @@ class SQMemory {
     this.endpoint = config.endpoint || 'https://sq.mirrorborn.us';
     this.apiKey = config.api_key;
     this.namespace = config.namespace || 'default-agent';
+    this.phext = config.phext || config.namespace || 'default';
   }
 
   /**
@@ -88,7 +89,7 @@ class SQMemory {
     const fullCoord = this._expandCoordinate(coordinate);
     const encoded = encodeURIComponent(fullCoord);
     
-    await this._request('POST', `/api/v2/insert?c=${encoded}`, text);
+    await this._request('POST', `/api/v2/insert?c=${encoded}&p=${this.phext}`, text);
     
     return {
       success: true,
@@ -104,7 +105,7 @@ class SQMemory {
     const encoded = encodeURIComponent(fullCoord);
     
     try {
-      const text = await this._request('GET', `/api/v2/select?c=${encoded}`);
+      const text = await this._request('GET', `/api/v2/select?c=${encoded}&p=${this.phext}`);
       return text;
     } catch (err) {
       if (err.message.includes('404')) {
@@ -122,7 +123,7 @@ class SQMemory {
     const encoded = encodeURIComponent(fullCoord);
     
     try {
-      await this._request('DELETE', `/api/v2/delete?c=${encoded}`);
+      await this._request('DELETE', `/api/v2/delete?c=${encoded}&p=${this.phext}`);
       return { success: true };
     } catch (err) {
       return { success: false, error: err.message };
@@ -137,7 +138,7 @@ class SQMemory {
     const encoded = encodeURIComponent(fullPrefix);
     
     try {
-      const response = await this._request('GET', `/api/v2/toc?c=${encoded}`);
+      const response = await this._request('GET', `/api/v2/toc?c=${encoded}&p=${this.phext}`);
       const lines = response.split('\n').filter(l => l.trim());
       return lines;
     } catch (err) {
@@ -161,7 +162,7 @@ class SQMemory {
  */
 module.exports = {
   name: 'sq-memory',
-  version: '0.1.0',
+  version: '1.0.1',
   
   async init(config) {
     const sq = new SQMemory(config);

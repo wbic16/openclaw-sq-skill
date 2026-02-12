@@ -33,7 +33,7 @@ Run it yourself (free) or use our hosted version (paid). Your agent gains four n
 ### 1. Install the Skill
 
 ```bash
-openclaw skill install sq-memory
+npx clawhub install sq-memory
 ```
 
 ### 2. Get SQ Endpoint

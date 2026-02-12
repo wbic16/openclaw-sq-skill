@@ -1,6 +1,6 @@
 {
   "name": "openclaw-sq-memory",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "description": "SQ Cloud memory skill for OpenClaw agents",
   "main": "index.js",
   "scripts": {

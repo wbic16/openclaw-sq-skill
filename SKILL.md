@@ -24,7 +24,7 @@ This skill connects your agent to SQ—persistent 11D text storage. Your agent c
 ## Installation
 
 ```bash
-openclaw skill install sq-memory
+npx clawhub install sq-memory
 ```
 
 Or manually:

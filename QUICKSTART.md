@@ -15,9 +15,9 @@ You can run SQ yourself for free or use our hosted version for convenience.
 
 ## Step 1: Install the Skill (30 seconds)
 
-**Option A: Via OpenClaw skill manager** (when available)
+**Option A: Via ClawHub**
 ```bash
-openclaw skill install sq-memory
+npx clawhub install sq-memory
 ```
 
 **Option B: Manual install**

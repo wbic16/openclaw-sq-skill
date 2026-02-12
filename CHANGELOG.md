@@ -47,6 +47,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - No built-in search (use `list_memories()` + filter)
 - No transactions across multiple coordinates
 
+## [1.0.1] - 2026-02-11
+
+### Fixed
+- **CRITICAL: Missing `p=` parameter in API calls** - All API endpoints now include `&p=${phext}` parameter for proper phext isolation (discovered during Tester onboarding)
+- Install command in docs updated from `openclaw skill install` to `npx clawhub install` (correct method)
+
+### Added
+- `phext` config option (defaults to `namespace` value if not specified)
+
+### Changed
+- All API calls now include phext name parameter for proper multi-tenant isolation
+
 ## [Unreleased]
 
 ### Planned
