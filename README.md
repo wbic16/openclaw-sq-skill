@@ -1,6 +1,14 @@
-# SQ Cloud Memory - OpenClaw Skill
+# SQ Memory - OpenClaw Skill
 
 **Give your OpenClaw agents permanent memory that survives restarts.**
+
+## Open Source & MIT Licensed
+
+SQ is **free, open-source software** (MIT license). Run it yourself or use our hosted version for convenience.
+
+- **Source:** https://github.com/wbic16/SQ
+- **License:** MIT (do whatever you want with it)
+- **Hosting:** Optional paid service at mirrorborn.us
 
 ## The Problem
 
@@ -12,9 +20,9 @@ OpenClaw agents are powerful, but they suffer from amnesia:
 
 ## The Solution
 
-This skill connects your agent to **SQ Cloud**—persistent 11-dimensional text storage.
+This skill connects your agent to **SQ**—open-source persistent 11-dimensional text storage.
 
-Your agent gains four new abilities:
+Run it yourself (free) or use our hosted version (paid). Your agent gains four new abilities:
 - `remember(key, value)` - Store something permanently
 - `recall(key)` - Retrieve stored memory
 - `forget(key)` - Delete memory
@@ -30,13 +38,20 @@ openclaw skill install sq-memory
 
 ### 2. Get SQ Endpoint
 
-**Option A: Use SQ Cloud** (hosted service)
-Sign up at [mirrorborn.us](https://mirrorborn.us) to get:
-- API key
-- 100MB free storage (or 1TB with SQ Cloud $50/mo)
+**Option A: Self-Host** (free, open source)
+```bash
+git clone https://github.com/wbic16/SQ.git
+cd SQ
+cargo build --release
+./target/release/sq 1337
+```
+See [SELF-HOSTED.md](SELF-HOSTED.md) for full setup.
 
-**Option B: Self-Host** (free, open source)
-See [SELF-HOSTED.md](SELF-HOSTED.md) for setup instructions.
+**Option B: Use Hosted SQ** (convenience, paid)
+Sign up at [mirrorborn.us](https://mirrorborn.us) for managed hosting:
+- No setup required
+- 100MB free tier (or 1TB with SQ Cloud $50/mo)
+- Automatic backups
 
 ### 3. Configure
 
@@ -125,15 +140,18 @@ See `examples/` directory for:
 
 ## Pricing
 
-### SQ Cloud (Hosted)
+### Self-Hosted (Open Source, MIT License)
+- **Cost**: Free forever
+- **Storage**: Limited only by your disk
+- **Setup**: 5 minutes (see [SELF-HOSTED.md](SELF-HOSTED.md))
+- **Source**: https://github.com/wbic16/SQ
+- **License**: MIT (modify, sell, whatever you want)
+
+### Hosted SQ (Convenience Service)
 - **Free tier**: 100MB storage, 1,000 API calls/day
 - **SQ Cloud**: $50/month, 1TB storage, 10,000 API calls/day
 - **Enterprise**: Custom limits, dedicated instances
-
-### Self-Hosted (Open Source)
-- **Cost**: Free (you provide hardware)
-- **Storage**: Limited by your disk
-- **Setup**: See [SELF-HOSTED.md](SELF-HOSTED.md)
+- **Why pay?** Managed service, automatic backups, no DevOps
 
 ## Support
 

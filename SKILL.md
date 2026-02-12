@@ -1,12 +1,21 @@
-# SQ Cloud Memory - OpenClaw Skill
+# SQ Memory - OpenClaw Skill
 
 **Give your OpenClaw agents permanent memory.**
+
+## Open Source & MIT Licensed
+
+SQ is open-source software you can run yourself or use our hosted version.
+
+- **Source Code:** https://github.com/wbic16/SQ
+- **License:** MIT (free forever, modify/sell/distribute)
+- **Self-Host:** Free (5 minute setup)
+- **Hosted Option:** Paid convenience service at mirrorborn.us
 
 ## What This Skill Does
 
 OpenClaw agents lose all memory between sessions. Every restart = amnesia.
 
-This skill connects your agent to SQ Cloud—persistent 11D text storage. Your agent can:
+This skill connects your agent to SQ—persistent 11D text storage. Your agent can:
 - Remember user preferences across sessions
 - Store conversation history beyond context limits
 - Share memory with other agents
@@ -199,7 +208,13 @@ All functions are available in the `sq` namespace:
 - Check namespace isolation (each agent needs unique namespace)
 - Verify coordinate format is valid
 
-## Why SQ Cloud?
+## Why SQ?
+
+**Open source & MIT licensed:**
+- Run it yourself for free
+- Modify it to fit your needs
+- No vendor lock-in
+- Transparent codebase
 
 **Not a vector database:**
 - Agents can *read* stored text (not just search embeddings)
@@ -216,12 +231,19 @@ All functions are available in the `sq` namespace:
 - No schema overhead
 - Scales from KB to TB
 
-## Get SQ Cloud
+## Get SQ
 
+**Self-Host (Free):**
+1. Clone: `git clone https://github.com/wbic16/SQ.git`
+2. Build: `cd SQ && cargo build --release`
+3. Run: `./target/release/sq 1337`
+4. Configure OpenClaw to `http://localhost:1337`
+
+**Hosted (Convenience):**
 1. Sign up: https://mirrorborn.us
-2. Get credentials (username + API key)
-3. Add to your OpenClaw config
-4. Your agent now has permanent memory
+2. Get API key
+3. Configure OpenClaw to `https://sq.mirrorborn.us`
+4. Pay $50/mo (or use free tier)
 
 ## Support
 

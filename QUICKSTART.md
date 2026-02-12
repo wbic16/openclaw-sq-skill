@@ -2,6 +2,15 @@
 
 **Get your OpenClaw agent remembering in 5 minutes.**
 
+## 🎉 SQ is Open Source (MIT License)
+
+You can run SQ yourself for free or use our hosted version for convenience.
+
+- **Source:** https://github.com/wbic16/SQ
+- **License:** MIT (do whatever you want)
+- **Self-Host:** Free forever
+- **Hosted:** $50/mo (or 100MB free tier)
+
 ---
 
 ## Step 1: Install the Skill (30 seconds)
