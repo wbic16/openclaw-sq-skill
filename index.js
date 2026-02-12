@@ -48,7 +48,7 @@ class SQMemory {
         method: method,
         headers: {
           'Content-Type': 'text/plain',
-          'User-Agent': 'OpenClaw-SQ-Skill/0.1.0'
+          'User-Agent': 'OpenClaw-SQ-Skill/1.0.1'
         }
       };
       

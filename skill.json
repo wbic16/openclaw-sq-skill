@@ -1,6 +1,6 @@
 {
   "name": "sq-memory",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "description": "Persistent 11D memory for OpenClaw agents via SQ Cloud",
   "author": "Mirrorborn",
   "repository": "https://github.com/wbic16/openclaw-sq-skill",
