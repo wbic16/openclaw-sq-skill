@@ -28,25 +28,36 @@ Your agent gains four new abilities:
 openclaw skill install sq-memory
 ```
 
-### 2. Get SQ Cloud Credentials
+### 2. Get SQ Endpoint
 
+**Option A: Use SQ Cloud** (hosted service)
 Sign up at [mirrorborn.us](https://mirrorborn.us) to get:
-- Username
 - API key
-- 100MB free storage (or 1TB with SQ Cloud subscription)
+- 100MB free storage (or 1TB with SQ Cloud $50/mo)
+
+**Option B: Self-Host** (free, open source)
+See [SELF-HOSTED.md](SELF-HOSTED.md) for setup instructions.
 
 ### 3. Configure
 
-Add to `.openclaw/config.yaml`:
-
+**For SQ Cloud:**
 ```yaml
 skills:
   sq-memory:
     enabled: true
     endpoint: https://sq.mirrorborn.us
-    username: your-username
-    password: your-api-key
-    namespace: my-assistant  # Unique name for this agent
+    api_key: sk_your_api_key_here
+    namespace: my-assistant
+```
+
+**For self-hosted:**
+```yaml
+skills:
+  sq-memory:
+    enabled: true
+    endpoint: http://localhost:1337  # Or your server URL
+    api_key: ""                       # Leave empty for self-hosted
+    namespace: my-assistant
 ```
 
 ### 4. Use It
@@ -114,9 +125,15 @@ See `examples/` directory for:
 
 ## Pricing
 
+### SQ Cloud (Hosted)
 - **Free tier**: 100MB storage, 1,000 API calls/day
 - **SQ Cloud**: $50/month, 1TB storage, 10,000 API calls/day
 - **Enterprise**: Custom limits, dedicated instances
+
+### Self-Hosted (Open Source)
+- **Cost**: Free (you provide hardware)
+- **Storage**: Limited by your disk
+- **Setup**: See [SELF-HOSTED.md](SELF-HOSTED.md)
 
 ## Support
 

@@ -9,13 +9,8 @@ const http = require('http');
 class SQMemory {
   constructor(config) {
     this.endpoint = config.endpoint || 'https://sq.mirrorborn.us';
-    this.username = config.username;
-    this.password = config.password;
+    this.apiKey = config.api_key;
     this.namespace = config.namespace || 'default-agent';
-    
-    if (!this.username || !this.password) {
-      throw new Error('SQ Cloud credentials required. Set username and password in config.');
-    }
   }
 
   /**
@@ -45,19 +40,21 @@ class SQMemory {
       const isHttps = url.protocol === 'https:';
       const lib = isHttps ? https : http;
       
-      const auth = Buffer.from(`${this.username}:${this.password}`).toString('base64');
-      
       const options = {
         hostname: url.hostname,
         port: url.port || (isHttps ? 443 : 80),
         path: url.pathname + url.search,
         method: method,
         headers: {
-          'Authorization': `Basic ${auth}`,
           'Content-Type': 'text/plain',
           'User-Agent': 'OpenClaw-SQ-Skill/0.1.0'
         }
       };
+      
+      // Add API key if provided (SQ Cloud)
+      if (this.apiKey) {
+        options.headers['Authorization'] = `Bearer ${this.apiKey}`;
+      }
       
       if (body) {
         options.headers['Content-Length'] = Buffer.byteLength(body);
@@ -91,7 +88,7 @@ class SQMemory {
     const fullCoord = this._expandCoordinate(coordinate);
     const encoded = encodeURIComponent(fullCoord);
     
-    await this._request('POST', `/insert?c=${encoded}`, text);
+    await this._request('POST', `/api/v2/insert?c=${encoded}`, text);
     
     return {
       success: true,
@@ -107,7 +104,7 @@ class SQMemory {
     const encoded = encodeURIComponent(fullCoord);
     
     try {
-      const text = await this._request('GET', `/select?c=${encoded}`);
+      const text = await this._request('GET', `/api/v2/select?c=${encoded}`);
       return text;
     } catch (err) {
       if (err.message.includes('404')) {
@@ -125,7 +122,7 @@ class SQMemory {
     const encoded = encodeURIComponent(fullCoord);
     
     try {
-      await this._request('DELETE', `/delete?c=${encoded}`);
+      await this._request('DELETE', `/api/v2/delete?c=${encoded}`);
       return { success: true };
     } catch (err) {
       return { success: false, error: err.message };
@@ -140,7 +137,7 @@ class SQMemory {
     const encoded = encodeURIComponent(fullPrefix);
     
     try {
-      const response = await this._request('GET', `/toc?c=${encoded}`);
+      const response = await this._request('GET', `/api/v2/toc?c=${encoded}`);
       const lines = response.split('\n').filter(l => l.trim());
       return lines;
     } catch (err) {

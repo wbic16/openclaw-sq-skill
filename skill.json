@@ -60,19 +60,14 @@
   "config": {
     "endpoint": {
       "type": "string",
-      "description": "SQ Cloud API endpoint",
+      "description": "SQ endpoint URL (mirrorborn.us or self-hosted)",
       "default": "https://sq.mirrorborn.us",
       "required": true
     },
-    "username": {
+    "api_key": {
       "type": "string",
-      "description": "SQ Cloud username",
-      "required": true
-    },
-    "password": {
-      "type": "string",
-      "description": "SQ Cloud API key",
-      "required": true,
+      "description": "SQ Cloud API key (leave empty for self-hosted)",
+      "required": false,
       "secret": true
     },
     "namespace": {
